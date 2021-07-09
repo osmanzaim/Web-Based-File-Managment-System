@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Kişiye Özel Sayfa</title>
+  <link rel='stylesheet' href='/css/styles2.css' />
+  <!-- CSS only -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+</head>
+
+
+
+
+<body>
+
+
+
+
+      <div class="login-box2">
+
+
+
+        <form action="/geriDon" method="post">
+          <button type="submit" name="geriDon" class="btn-link"><img src="/return.png" class="imageItem" alt="submit" /></button>
+          <input type="hidden" name="hangiKullanicidanGeliyor" value="<%=kullaniciAdi%>">
+
+        </form>
+
+
+            <h1 style="color:black">
+              <%=kullaniciAdi%>
+            </h1>
+
+            <h2>Dosya Adı </h2>
+            <p><%=item%></p>
+
+
+            <h3>Boyut</h2>
+            <p><%=boyut%> byte</p>
+
+            <h3>Oluşturulma Zamanı</h3>
+            <p><%=zaman%></p>
+
+
+            <form  action="/delete" method="post">
+              <input type="hidden" name="listName" value="<%=kullaniciAdi%>">
+              <button style = "max-height: 50px; max-width: 50px; background-color: #FFFFFF; border-radius: 50%;  " type="submit" name="button" value="<%=item%>">DOWNLOAD</button>
+            </form>
+
+            <form action="/delete" method="post">
+
+              <label><img class="imageDelete" src="/delete.png"/></label>
+              <input type="checkbox" onChange="this.form.submit()" name="checkboxChecked" value="<%=item%>" >
+
+              <input type="hidden" name="listName" value="<%=kullaniciAdi%>">
+            </form>
+
+      </div>
+
+
+
+</body>
+</html>
